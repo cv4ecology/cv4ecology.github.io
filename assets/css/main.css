@@ -2272,4 +2272,4 @@ button,
     margin-top: 0;
     padding-top: 0; }
 
-.bio { min-height: 400px; /* or use a variable if you want to be fancy */ }
+.bio { min-height: 300px; /* or use a variable if you want to be fancy */ }
