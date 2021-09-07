@@ -1220,7 +1220,7 @@ input[type="radio"] + label:before {
     border-radius: 0.375em;
     display: block; }
   .image.left, .image.right {
-    max-width: 40%; }
+    max-width: 20%; }
     .image.left img, .image.right img {
       width: 100%; }
   .image.left {
