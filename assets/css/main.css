@@ -2272,4 +2272,27 @@ button,
     margin-top: 0;
     padding-top: 0; }
 
-.bio { min-height: 300px; /* or use a variable if you want to be fancy */ }
+.bio { 
+  /* min-height: 300px; */
+}
+
+.bio-container {
+  display: inline-block;
+}
+
+.bio-container h4 {
+  padding-top: 0.5em;
+}
+
+.bio-container .image {
+  width: 20%;
+  min-width:  250px;
+}
+
+.speakers-container { 
+  padding-left:  2em;
+}
+
+.speakers-container h4 { 
+  margin-bottom:  0.2em;
+}
