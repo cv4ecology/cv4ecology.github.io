@@ -2276,23 +2276,28 @@ button,
   /* min-height: 300px; */
 }
 
-.bio-container {
+.bio-container, .speaker-container {
   display: inline-block;
+  width: 100%;
 }
 
-.bio-container h4 {
+.bio-container h4, .speaker-container h4 {
   padding-top: 0.5em;
 }
 
-.bio-container .image {
+.bio-container .image, .speaker-container .image {
   width: 20%;
-  min-width:  250px;
+  min-width: 250px;
 }
 
-.speakers-container { 
-  padding-left:  2em;
+.bio-container img, .speaker-container img {
+  border: 1px #ddd solid;
 }
 
-.speakers-container h4 { 
-  margin-bottom:  0.2em;
+.speaker-container h4 { 
+  margin-bottom: 0.2em;
+}
+
+.speaker-container p {
+  font-style: italic;
 }
