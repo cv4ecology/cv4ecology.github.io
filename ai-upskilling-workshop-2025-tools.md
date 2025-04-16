@@ -6,6 +6,23 @@ There are no strict requirements for the software tools participants use during 
 * [Miniforge](https://github.com/conda-forge/miniforge) is the command-line tool we'll use to manage Python environments and packages.<br/>([Miniforge installation instructions](#installing-miniforge))
 * Any SSH client you're comfortable with; if you don't have a preferred SSH client, we recommend [PortX](https://portx.online/en/).
 
+This page includes installation and configuration instructions for VS Code and Miniforge, as well as some recommended things to try that will help you familiarize yourself with both environments.
+
+## Contents
+
+  - [Installing and exploring Visual Studio Code](#installing-and-exploring-visual-studio-code)
+    - [Downloading and installing VS Code](#downloading-and-installing-vs-code)
+    - [Setting up Python support in VS Code](#setting-up-python-support-in-vs-code)
+    - [Download or create a test Python file](#download-or-create-a-test-python-file)
+    - [Editing and running Python code](#editing-and-running-python-code)
+    - [VS Code customizations that may make Matlab/R users feel more at home](#vs-code-customizations-that-may-make-matlabr-users-feel-more-at-home)
+    - [Editing VS Code settings](#editing-vs-code-settings)
+    - [Additional customizations that require editing VS Code settings files](#additional-customizations-that-require-editing-vs-code-settings-files)
+  - [Installing Miniforge](#installing-miniforge)
+    - [Install Miniforge on Windows](#install-miniforge-on-windows)
+    - [Install Miniforge on Linux/Mac](#install-miniforge-on-linuxmac)
+    - [Create a Python virtual environment](#create-a-python-virtual-environment)
+    - [Accessing your Python environments in VS Code](#accessing-your-python-environments-in-vs-code)
 
 ## Installing and exploring Visual Studio Code
 
@@ -47,13 +64,13 @@ Because cells are important to the visual experience you'll have in VS Code, and
 
 ### Editing and running Python code
 
-Any time you want to run an entire Python file from VS Code, you can click "run &arr; debug" or "run &arr; start without debugging".  But you won't do this very often during this workshop; when working on data science and machine learning code, it's more common to run small bits of code at a time as you build up your Python program.  In VS Code, we will be using the [Python Interactive Window](https://code.visualstudio.com/docs/python/jupyter-support-py) for this.  Think of this window like a live copy of the state of your program, where you can keep running new code and changing variables.  This style of running code will be familiar to Matlab and R users.
+Any time you want to run an entire Python file from VS Code, you can click "run &rarr; debug" or "run &rarr; start without debugging".  But you won't do this very often during this workshop; when working on data science and machine learning code, it's more common to run small bits of code at a time as you build up your Python program.  In VS Code, we will be using the [Python Interactive Window](https://code.visualstudio.com/docs/python/jupyter-support-py) for this.  Think of this window like a live copy of the state of your program, where you can keep running new code and changing variables.  This style of running code will be familiar to Matlab and R users.
 
 Once you've opened your Python file, if you put your cursor in any cell, like this:
 
 <img src="images/tools_example_cell.jpg">
 
-<br/>...and press ctrl-enter (or right-click on the editor and click "run in interactive window &rarr; run current cell"), that cell will be executed in the Python Interactive Window, where you'll see the output, like this:
+...and press ctrl-enter (or right-click on the editor and click "run in interactive window &rarr; run current cell"), that cell will be executed in the Python Interactive Window, where you'll see the output, like this:
 
 <img src="images/tools_cell_output.jpg">
 
@@ -119,14 +136,166 @@ It's generally not recommended to type lots of code directly into that area, sin
     <img src="images/tools_codelens.jpg">
  
   You can still run code cells using the keyboard.
-    
-* Hide this annoying yellow light bulb that appears all over your code:
+
+
+### Editing VS Code settings
+
+There are lots of things you can customize in the VS Code settings menus, but there even <i>more</i> things you can customize by directly editing configuration files.  If you use VS Code for a while, eventually you'll have to edit a settings file somewhere, so, this is as good a time as any to learn how this works.  And as a bonus, VS Code settings files are in [JSON format](https://en.wikipedia.org/wiki/JSON), and lots of data that's relevant to the workshop is also in JSON format, so, this is a good opportunity to understand how JSON files work.  This section is a quick intro to editing the .json settings files; the next section will include some recommended settings.
+
+To edit settings in VS code, first open the settings file:
+
+1. Open VS Code settings by pressing `Ctrl+,` (Windows/Linux) or `Cmd+,` (Mac)
+2. Click the "Open Settings (JSON)" icon in the top-right corner (it looks like a page with a curly bracket)
+3. This will open the `settings.json` file, which will either be empty or will contain your existing settings
+
+When you add settings, follow these simple rules:
+
+- All settings go inside the main curly braces `{ }`
+- Each setting follows this format: `"setting.name": value`
+- Values can be text in quotes (`"value"`), numbers without quotes (`42`), or `true`/`false`
+- Every setting except the last one must be followed by a comma
+- The last setting should not have a comma after it
+
+For example, let's say someone tells you to add this to your settings file (this is one of the changes we'll recommend below:
+
+```json
+"editor.lightbulb.enabled": "off"
+```
+
+The first time you open your settings file, it will be empty, or it might just be an empty pair of curly braces.  After you add this setting, your settings file should look like this:
+
+```json
+{
+  "editor.lightbulb.enabled": "off"
+}
+```
+
+If you already have a bunch of settings in your settings file, for example if you see this:
+
+```json
+{
+  "editor.fontSize": 14,
+  "workbench.colorTheme": "Default Dark+"
+}
+```
+
+...you can add the new setting at the end, and add a comma after the previous setting, like this:
+
+```json
+{
+  "editor.fontSize": 14,
+  "workbench.colorTheme": "Default Dark+",
+  "editor.lightbulb.enabled": "off"
+}
+```
+
+Notice that:
+- Each setting is on its own line
+- There's a comma after each setting except the last one
+- The whole configuration is wrapped in curly braces `{ }`
+
+
+### Additional customizations that require editing VS Code settings files
+
+Again, <b>these are all optional tweaks</b> that make a slightly cleaner visual experience that feels a bit more like the Matlab editor.
+
+* Hide this yellow light bulb that appears all over your code:
 
   <img src="images/tools_lightbulb.jpg">
 
-  * Open the settings.json file (press ctrl-shift-p, type “preferences: open user settings (json)”)
+  ...by adding this setting:
   
-    You will see the settings.json
+  `"editor.lightbulb.enabled": "off"`
+  
+* Hide these vertical bars:
+
+  <img src="images/tools_vertical_bars.jpg">
+  
+  ...by adding this setting:
+  
+  `"editor.guides.indentation": false`
+  
+* Disable this highlighting behavior when I put my cursor in any word (but keep it when I select the word):
+
+  <img src="images/tools_word_highlight.jpg">
+  
+  ...by adding this setting:
+  
+  `"editor.occurrencesHighlight": "off"`
+  
+* Enable word wrap in the interactive window (so that when you print long lines, they don't run outside the window) by adding this setting:
+
+  `"notebook.output.wordWrap": true`
+
 	
 ## Installing Miniforge
 
+If you are installing Python for the first time, we recommend installing [Miniforge](https://github.com/conda-forge/miniforge).  Miniforge is an environment for installing and running Python stuff.
+
+### Install Miniforge on Windows
+
+To install Miniforge on Windows, just download and run the [Miniforge installer](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe).  If you get a "Windows protected your PC" warning, you might have to click "More info" and "run anyway". You can leave everything at the default value during installation.
+
+All the instructions we provide later in this section will assume you are running at the Miniforge command prompt, which is basically just like a regular command prompt, but it has access to all the Python stuff.  On Windows, once you've installed Miniforge, you can start your Miniforge command prompt by launching the shortcut called "Miniforge prompt".
+
+You will know you are at a Miniforge prompt (as opposed to run-of-the-mill command prompt) if you see an environment name in parentheses before your current directory, like this:
+
+<img src="images/tools_conda_prompt_base.jpg">
+
+### Install Miniforge on Linux/Mac
+
+The [list of Miniforge installers](https://github.com/conda-forge/miniforge?tab=readme-ov-file#miniforge3) has links for Linux and OSX.  If you're installing on a Mac, be sure to download the right installer: "x86_64" if you are on an Intel Mac, "arm64 (Apple Silicon)" if you are on an M1/M2 Mac with Apple silicon.  In all of these cases, you will be downloading a .sh file; after you run it to install Miniforge, you should see an environment name in parentheses just like in the images above.
+
+### Create a Python virtual environment
+
+Once you've installed Miniforge, open the Miniforge command prompt.  If you are using Windows, you will likely do this using the shortcut called "Miniforge prompt".  If you are on Linux/Mac, you can just start a regular terminal; once you've installed Miniforge, all command prompts are Miniforge command prompts.
+
+As per above, you should see something like this:
+
+<img src="images/tools_conda_prompt_base.jpg">
+
+Usually when you work with Python code, you create a "virtual environment" for each project.  A Python virtual environment is basically a set of installed libraries, and keeping your projects in different environments make it much easier to handle situations where, for example, one project requires version 1.24.6 of a library, but another project requires version 2.45.99 of the same library.
+
+You can create a Python environment called "ai-workshop" like this:
+
+`conda create -n ai-workshop python=3.11 pip -y`
+
+That tells Miniforge to create a virtual environment called 'ai-workshop', using Python version 3.11, install just the library called "pip" in that environment.  The "-y" at the end says "don't ask me to confirm each step, just create the environment".
+
+Then whenever you want to use that environment, run:
+
+`conda activate ai-workshop`
+
+After that, you should see a prompt that looks like this:
+
+<img src="images/tools_conda_prompt_workshop.jpg">
+
+You will need to run the "conda activate" command each time you want to use that environment.
+
+In this workshop, we will use this command prompt to manage and install Python package.  For example, let's install the package called "pandas" in the environment we just created.  Open your Miniforge prompt, activate the environment by running "conda activate ai-workshop", then run:
+
+`pip install pandas`
+
+### Accessing your Python environments in VS Code
+
+VS Code should be aware of Python environments that you create in the Miniforge command prompt, you just need to tell VS Code which environment you want it to use.  In the Python Interactive Window that we referred to earlier, where your output shows up in VS Code, there is an icon in the upper-right that tells you which environment that window is using right now:
+
+<img src="images/tools_environment_icon.jpg">
+
+Click that icon, then click "select another kernel", then click "Python environments", and the Python environment you just created should appear there:
+
+<img src="images/tools_select_environment.jpg">
+
+Select that environment.  You may be prompted to install some additional VS Code stuff, click "OK".
+
+We can verify that our environment is working OK by checking that our VS Code window can see the "pandas" library that we installed earlier.  In this area at the bottom of the Python Interactive Window in VS Code:
+
+<img src="images/tools_interactive_execution.jpg">
+
+...run this:
+
+`import pandas; print(pandas.__version__)`
+
+You should see something like this:
+
+<img src="images/tools_pandas_version.jpg">
