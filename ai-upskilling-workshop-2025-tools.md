@@ -2,9 +2,9 @@
 
 There are no strict requirements for the software tools participants use during the workshop, but especially if you are new to Python, your experience will likely be better if you use the same tools the instructors are using.  Consequently, we strongly recommend that participants - especially the "new to Python" group - install the following tools prior to the workshop.  For VS Code in particular, we recommend following our installation instructions, so that your environment is as similar as possible to the environment that the instructors and other participants are using.
 
-* [Visual Studio Code](https://code.visualstudio.com/) (the development environment we'll use to edit and run Python code) ([#installing-and-exploring-visual-studio-code](installation instructions))
-* [Miniforge](https://github.com/conda-forge/miniforge) (the command-line tool we'll use to manage Python environments and packages) (([#installing-miniforge](installation instructions))
-* Any SSH client you're comfortable with; if you don't have a preferred SSH client, we recommend [PortX](https://portx.online/en/)
+* [Visual Studio Code](https://code.visualstudio.com/) is the development environment we'll use to edit and run Python code.<br/>([VS Code installation instructions](#installing-and-exploring-visual-studio-code))
+* [Miniforge](https://github.com/conda-forge/miniforge) is the command-line tool we'll use to manage Python environments and packages.<br/>([Miniforge installation instructions](#installing-miniforge))
+* Any SSH client you're comfortable with; if you don't have a preferred SSH client, we recommend [PortX](https://portx.online/en/).
 
 
 ## Installing and exploring Visual Studio Code
@@ -42,14 +42,29 @@ To separate "cells" in our code.  A cell is a small block of code (typically 10-
 
 `#%% Load the data file`
 
-Because cells are important to the visual experience you'll have in VS Code, and are important to the way you'll run code, as you get used to VS Code, we recommend having a Python file open with a few cells in it.  We put a file [here]() that doesn't do anything useful, but has the "look and feel" of the code you'll see during the workshop.  You may want to download that file and open it in VS Code (using file &rarr; open) as you customize and explore VS Code.
+Because cells are important to the visual experience you'll have in VS Code, and are important to the way you'll run code, as you get used to VS Code, we recommend having a Python file open with a few cells in it.  We put a file [here](https://raw.githubusercontent.com/cv4ecology/cv4ecology.github.io/refs/heads/main/demo-python-cells.py) that doesn't do anything useful, but has the "look and feel" of the code you'll see during the workshop.  You may want to download that file to a folder on your computer, then open it in VS Code (using file &rarr; open) as you customize and explore VS Code.
 
 
 ### Editing and running Python code
 
-Any time you want to run an entire Python file from VS Code, you can click "run &arr; debug" or "run &arr; start without debugging".  But you won't do this very often; when working on data science and machine learning code, it's more common to run small bits of code at a time as you build up your Python program.  In VS Code, we will be using the [Python Interactive Window](https://code.visualstudio.com/docs/python/jupyter-support-py) for this.  Think of this window like a live copy of the state of your program, where you can keep running new code and changing variables.  This style of running code will be familiar to Matlab and R users.
+Any time you want to run an entire Python file from VS Code, you can click "run &arr; debug" or "run &arr; start without debugging".  But you won't do this very often during this workshop; when working on data science and machine learning code, it's more common to run small bits of code at a time as you build up your Python program.  In VS Code, we will be using the [Python Interactive Window](https://code.visualstudio.com/docs/python/jupyter-support-py) for this.  Think of this window like a live copy of the state of your program, where you can keep running new code and changing variables.  This style of running code will be familiar to Matlab and R users.
 
-Once you've 
+Once you've opened your Python file, if you put your cursor in any cell, like this:
+
+<img src="images/tools_example_cell.jpg">
+
+<br/>...and press ctrl-enter (or right-click on the editor and click "run in interactive window &rarr; run current cell"), that cell will be executed in the Python Interactive Window, where you'll see the output, like this:
+
+<img src="images/tools_cell_output.jpg">
+
+You can also execute one or more lines, instead of a whole cell, by selecting those lines, and pressing shift-enter (or you can right-click on the editor and click "run in interactive window &rarr; run selection/line in interactive window".
+
+For RStudio and Matlab users, this experience should feel familiar, where you have your code in one place and the output in another.  Just like in the Matlab/R Studio console, you can also run code directly in the Python Interactive Window, by clicking in this area in the bottom and typing any code you want to run:
+
+<img src="images/tools_interactive_execution.jpg">
+
+It's generally not recommended to type lots of code directly into that area, since you have no record of that code.  But it's often useful if you just want to run a disposable bit of code, e.g. to print the value or type of a variable.
+
 
 ### VS Code customizations that may make Matlab/R users feel more at home
 
