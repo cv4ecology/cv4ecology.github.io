@@ -24,6 +24,9 @@ This page includes installation and configuration instructions for VS Code and M
     - [Create a Python virtual environment](#create-a-python-virtual-environment)
     - [Accessing your Python environments in VS Code](#accessing-your-python-environments-in-vs-code)
   - [Remote development](#remote-development)    
+    - [Connecting to your VM with an SSH client](#connecting-to-your-vm-with-an-ssh-client)
+	- [Installing stuff on your VM](#installing-stuff-on-your-vm)
+	- [Connecting to your VM from VS Code](#connecting-to-your-vm-from-vs-code)
 
 ## Installing and exploring Visual Studio Code
 
