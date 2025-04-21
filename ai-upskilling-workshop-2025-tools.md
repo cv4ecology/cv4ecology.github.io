@@ -23,6 +23,7 @@ This page includes installation and configuration instructions for VS Code and M
     - [Install Miniforge on Linux/Mac](#install-miniforge-on-linuxmac)
     - [Create a Python virtual environment](#create-a-python-virtual-environment)
     - [Accessing your Python environments in VS Code](#accessing-your-python-environments-in-vs-code)
+  - [Remote development](#remote-development)    
 
 ## Installing and exploring Visual Studio Code
 
@@ -299,3 +300,96 @@ We can verify that our environment is working OK by checking that our VS Code wi
 You should see something like this:
 
 <img src="images/tools_pandas_version.jpg">
+
+
+## Remote development
+
+During the workshop, we will be providing storage and compute resources courtesy of the [CyVerse](https://cyverse.org/) program.  Specifically, we have:
+
+1. Some shared storage that we're populating with datasets that participants are likely to access
+
+2. A bunch of Linux computers.  Each of those computers has:
+   * A GPU (a small one, but enough to train small deep learning models)
+   * A bit of storage for, e.g., model output
+   * Access to the larger shared storage
+
+You will usually hear us refer to those computers as "VMs", i.e. "virtual machines".  In fact, for the rest of this section, we will say "VM" rather than "computer".  But VMs are just computers.
+
+VMs are accessible via SSH.  As it becomes necessary to access those computers, we will provide you with login information for a computer that is assigned to you (possibly shared with others with whom you are working).  Broadly speaking, there are two ways you can connect to these VMs: you can connect with an SSH client, and you can connect your VS Code window directly to your remote computer.  During the workshop, you will likely have to do a bit of both.  In this section, we'll document what you should do when you get a brand new VM, and how to connect to it.
+
+### Connecting to your VM with an SSH client
+
+You can connect directly in an SSH client.  As per above, we recommend [PortX](https://portx.online/en/) as a free, cross-platform SSH client, so our instructions will use PortX, but you can use any SSH client you prefer.  Let's say we give you the following login information:  
+
+```
+IP address: 1.2.3.4  
+login: ai-workshop-participant  
+password: ai-workshop-password
+```
+
+To use this login information, Start PortX, then click this little button on the left to bring up the connection list:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tools_portx_connection_list.jpg">
+
+Right-click, and click new &rarr; terminal session.  Give it a name, like "AI Workshop VM", and enter the IP address we gave you in the "hostname" box, like this:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tools_portx_new_connection_general.jpg">
+
+Click the icon on the left that looks like a person, and enter the username and password we gave you:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tools_portx_auth.jpg">
+
+Click "OK", then double-click on the connection you just created.  This will give you a Linux terminal where you can run commands on the remote VM:
+
+<img src="images/tools_cv4e_terminal.jpg">
+
+You can also set up a graphical connection over this SSH connection, so you can run graphical programs (especially VS Code) on the remote VM.  We are not going to recommend this as a common approach, but just to have it all documented, here is how you can configure a remote graphical connection:
+
+* Configure port forwarding in your SSH client.  Assuming you are using PortX...<br/><br/>
+  * Right-click on the connection you created above
+  * Click "properties"
+  * Click the icon on the left that looks like the universal symbol for "Internet"
+  * Click "Add"
+  * Create a rule that looks like this:<br><br><img src="images/tools_portx_tunneling.jpg">
+  
+* Install a client for the "VNC" graphical desktop protocol.  We recommend the free-and-very-simple "vncviewer64" client that comes with TigerVNC.  If you are a Windows user, go <a href="https://sourceforge.net/projects/tigervnc/files/stable/1.15.0/">here</a> and download "vncviewer64-1.15.0.exe".
+
+* Run the VNCViewer program you just downloaded, and you'll get a window that looks like this:<br/><br/><img src="images/tools_vncviewer.jpg"><br/><br/>Enter "localhost:5906", like in the screenshot, click "connect", and type your password.  You should get a delightful graphical view of your VM, like this:<br/><br/><img src="images/tools_vnc_screenshot.jpg">
+
+### Installing stuff on your VM
+
+The only thing that you almost definitely want to install on your VM is Miniforge, so you can set up Python environments.  To do that, log in via SSH, and run the following lines (best to just copy and paste directly into the terminal):
+
+```
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3-$(uname)-$(uname -m).sh -b
+ ~/miniforge3/bin/conda init bash
+ source ~/.bashrc
+```
+
+As was the case when you installed Miniforge on your local computer, you know everything is working if you see "base" in your command prompt, like this:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tools_mamba_bash.jpg">
+
+For those who are curious, those four lines do the following things, respectively:
+
+* Download Miniforge, using the [curl](https://curl.se/) program
+* Install Miniforge
+* Tell Miniforge to change your terminal configuration so it's always available
+* Re-read your terminal configuration (technically you could skip this step by logging out and logging in again)
+
+### Connecting to your VM from VS Code
+
+Often you want to use your local VS Code installation, but have the Python code actually be running on the remote VM.  VS Code is very good at this.  To set this up...
+
+* Press ctrl-shift-x to bring up the extensions menu in VS Code, and install the "Remote - SSH" extension, which should look like this:<br/><br/><img src="images/tools_remote_ssh_extension.jpg">
+* Click view &rarr; command palette (or press "ctrl-shift-p")
+* Type "remote-ssh".  A bunch of different things you can do with this extension will pop up; click the one that says "remote-ssh: connect to host".  You should see this:<br/><br/><img src="images/tools_remote_ssh_new.jpg">
+* Click "add new ssh host"
+* In the box that comes up, type "ssh [user]@[ip-address]".  Using the example from above, you would type:<br/>ai-workshop-participant@1.2.3.4
+* A little message will pop up saying that the new connection was created.
+* Launch the "remote-ssh: connect to host" command again, this time your connection will be in the list, before "add new ssh host".  Click on the new connection.
+* A new window will pop up, in which you will be prompted for the operating system type of the remote computer, click "Linux":<br/><img src="images/tools_vscode_remote_os.jpg">
+* Click "continue".  You will be prompted for your password, type it.
+* You'll see a brand new VS Code Window pop up.  This VS Code window is connected to the remote VM.  For example, if you create a new file and click "save", you'll see that the default folder is your home folder on the remote Linux VM, not the default "save" folder on your local PC
+* Install the "Python" and "Jupyter" extensions in this Window, just like you did on your own computer.

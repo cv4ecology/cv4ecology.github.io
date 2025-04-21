@@ -10,11 +10,11 @@ participants get used to VS Code.
 # These are packages we'll use somewhere in this file.  They don't have
 # to be together at the top of a Python file, though it's common to do this.
 import os
-from datetime import date
 
 
 #%% Print the current date
 
+from datetime import date
 today = date.today()
 print("Today's date is:", today)
 
