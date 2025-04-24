@@ -234,7 +234,8 @@ Again, <b>these are all optional tweaks</b> that make a slightly cleaner visual 
 	
 ## Installing Miniforge
 
-If you are installing Python for the first time, we recommend installing [Miniforge](https://github.com/conda-forge/miniforge).  Miniforge is an environment for installing and running Python stuff.
+If you are installing Python for the first time, we recommend installing [Miniforge](https://github.com/conda-forge/miniforge).  Miniforge is an environment for installing and running Python stuff.  If you already have Miniforge or Anaconda installed on your computer, you can skip this step.
+
 
 ### Install Miniforge on Windows
 
