@@ -8,6 +8,12 @@ There are no strict requirements for the software tools participants use during 
 
 This page includes installation and configuration instructions for VS Code and Miniforge, as well as some recommended things to try that will help you familiarize yourself with both environments.
 
+## Questions
+
+If anything doesn't work as expected, please don't spend hours banging your head against it!  Throughout this workshop, we'll encourage you to try to ask your questions to an AI system first, not because we don't want to hear from you (we do!), rather because practicing asking engineering questions to AI systems is an important part of what we hope you learn.
+
+But if something in these instructions doesn't work after spending around 60 seconds with an AI system, please contact us.  We prefer that you use the <a href="https://cv4e.slack.com/archives/C08NLRREWN7">cv4-upskill channel on Slack</a>, to which you all should have received an invite, since if you have a question, there's almost a 100% chance that another participant has the same question.  But for any questions where that's not appropriate, email us at <a href="mailto:ai-upskilling-workshop@googlegroups.com">ai-upskilling-workshop@googlegroups.com</a>.
+
 ## Contents
 
   - [Installing and exploring Visual Studio Code](#installing-and-exploring-visual-studio-code)
