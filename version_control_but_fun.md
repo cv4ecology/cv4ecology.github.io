@@ -40,7 +40,7 @@ No need to use all of these — start simple, but know what’s out there.
 
 A sample (but not so simple) repo might look like: 
 
-<img src="ims/project_structure.png" alt="project structure sample" width="500"/>
+<img src="images/git/project_structure.png" alt="project structure sample" width="500"/>
 
 
 ## 3. GitHub: just tell me what I need to know
@@ -270,11 +270,11 @@ https://github.com/fantastic-lion/wonderful-project
 
 Go to a repo you want to contribute to (in our example, the "wonderful-project" repo), and click **Fork** in the top right:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="ims/fork_button.jpg">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/git/fork_button.jpg">
 
 GitHub will ask you for a name for the new repo:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="ims/create_fork.jpg" width="500">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/git/create_fork.jpg" width="500">
 
  99% of the time, you want to keep the original name (i.e., you want to leave the "Create a new fork" page at its default settings).  This isn't required, but it's a convenient convention.  Click "create fork".  
 
@@ -307,7 +307,7 @@ At this point, you have made a change to your fork on GitHub.  You didn't need a
 
 * Visit your fork on GitHub.  Near the top of the page, you should see something like this, telling you that you've made a change that you can contribute back to the original repo:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="ims/changes_ahead_of_upstream.jpg">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/git/changes_ahead_of_upstream.jpg">
 
 * Click contribute &rarr; open pull request.  Your commit message should be the default title.  In a real scenario, you would typically add a description explaining your proposed changes in more detail.  When you're ready, click "create pull request".  
 
