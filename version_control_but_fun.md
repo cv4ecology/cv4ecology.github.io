@@ -242,10 +242,12 @@ This creates a new branch and switches to it.
 Edit a file again, then:
 
 ```bash
-git add README.md  
+git add -A
 git commit -m "Edit on my-feature branch"  
 git push -u origin my-feature
 ```
+
+This time, just to show a slightly different approach, we used `git add -A` rather than adding a specific file: this says "I'm going to upload <i>all</i> files with changes".  This is very common when you are editing lots of files: if you edit code in 10 different files, it's a pain to `git add` them individually.  But... always run `git status` to check which files have changes before using `git add -A`!  You can easily commit changes you don't mean to commit - like adding random files to your repo - if you use `git add -A` without looking at the output of `git status`.
 
 ### Open and merge a pull request
 
