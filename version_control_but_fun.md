@@ -16,7 +16,7 @@ You don't have to use GitHub to store your code during this workshop, but you mi
 
 ## 2. What’s inside a typical GitHub repo?
 
-GitHub repos are just folders; in theory you can organize files however you like in a folder.  However, knowing about some common files and folders will help you more quickly understand other repos, and will help you create repos that are more easily reusable.
+GitHub repos are just folders; in theory, you can organize files however you like within them. However, knowing about some common files and folders will help you more quickly understand other repos, and will help you create repos that are more easily reusable.
 
 Here are some files you’ll usually see in a GitHub repo (and why it helps):
 
@@ -45,7 +45,7 @@ A sample (but not so simple) repo might look like:
 
 ## 3. GitHub: just tell me what I need to know
 
-You’ll hear a lot of terms like "clone", "commit", "pull request", "fork", etc. Here's what they mean — and why we use them.
+You’ll hear a lot of terms like "clone", "commit", "pull request", "fork", etc. Here’s what each of these terms means — and why we use them.
 
 ### Repository (aka "repo")
 
@@ -86,7 +86,7 @@ _Why?_ Although you *can* just push code directly to the main code branch on you
 A mechanism offered by GitHub to **make your own copy of someone else’s repo** (on GitHub, not your machine).
 _Why?_ You can propose changes to someone else’s project, even without direct access.
 
-The term "fork" refers to both the act of making a copy (as in, "I am going to fork Jane's repo") and the copy itself (as in, "this is my fork of Jane's repo").
+The term "fork" refers to both the act of making a copy (e.g., "I am going to fork Jane's repo") and the copy itself (e.g., "this is my fork of Jane's repo").
 
 ### That was a lot...
 
@@ -184,7 +184,7 @@ mkdir c:\ai-workshop
 cd c:\ai-workshop
 ```
 
-When you console is in the folder where you want to copy the repo, run the following to cone the repo:
+When you console is in the folder where you want to copy the repo, run the following to clone the repo:
 
 ```bash
 git clone https://github.com/your-username/my-first-repo.git  
@@ -261,8 +261,8 @@ Done! Your change is now in `main`.
 ## 8. Forking and upstream PRs
 
 In this section, we're going to talk about how you can request changes to <i>someone else's</i> repo; this is a core part of how open-source software works.  Anyone can suggest a change — or, in GitHub terms, "open a pull request" — to anyone else's repo.   As you go through this exercise, though, you probably want to pick a repo where it's socially OK to suggest random changes, and where the repo owner is likely to merge your random changes, so, for this part of the exercise, we recommend finding a friend in the workshop with whom you can exchange PRs.  It's fine if many people are making PRs to the same repo.
- 
-In this document, we're going to assume your GitHub username is `awesome-elephant`, and you are friends with a GitHub user named `fantastic-lion`, and you are going request changes to one of their repos called `wonderful-project`, which would typically be at:
+
+In this document, we’ll assume your GitHub username is `awesome-elephant` and that you’re friends with a GitHub user named `fantastic-lion`. You’ll be requesting changes to one of their repos called `wonderful-project`, which would typically be at:
 
 https://github.com/fantastic-lion/wonderful-project
 
