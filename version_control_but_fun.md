@@ -399,7 +399,7 @@ Use short but clear messages like:
 
 Better to avoid generic ones like `update` or `stuff`.
 
-### ❌ Don't ppload (bulky) data or secrets
+### ❌ Don't upload (bulky) data or secrets
 
 Large datasets, credentials, API keys — don’t add them to GitHub. You can use shared drives or cloud buckets instead.
 
