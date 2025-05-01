@@ -397,6 +397,7 @@ Often you want to use your local VS Code installation, but have the Python code 
 * Type "remote-ssh".  A bunch of different things you can do with this extension will pop up; click the one that says "remote-ssh: connect to host".  You should see this:<br/><br/><img src="images/tools_remote_ssh_new.jpg">
 * Click "add new ssh host"
 * In the box that comes up, type "ssh [user]@[ip-address]".  Using the example from above, you would type:<br/>ai-workshop-participant@1.2.3.4
+* Another box will pop up, asking you which config file you want to store this login in.  It's just going to store the user name and IP address, so you don't have to type it every time you log in.  That box will look something like this, choose the default (the first one in the list):<br/><br/><img src="images/tools_ssh_config.jpg">
 * A little message will pop up saying that the new connection was created.
 * Launch the "remote-ssh: connect to host" command again, this time your connection will be in the list, before "add new ssh host".  Click on the new connection.
 * A new window will pop up, in which you will be prompted for the operating system type of the remote computer, click "Linux":<br/><img src="images/tools_vscode_remote_os.jpg">
