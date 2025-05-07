@@ -423,7 +423,7 @@ Group related files into folders (`notebooks/`, `src/`, etc.), and name things c
 If you’ve followed along this far — or even if you just scrolled your way here — **congrats**! You’ve just walked through the core of how version control things are done in the real world. Please keep using these tools during the workshop — and beyond. You have got this \o/
 
 
-## 12. Keep going: level up your GitHub game
+## Keep going: level up your GitHub game
 
 GitHub isn’t just a place to push code — it’s part of a broader ecosystem of **open-source practices** and **tools for writing better software**.
 
