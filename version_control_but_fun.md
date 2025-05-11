@@ -54,7 +54,7 @@ A project folder tracked by Git. This is where all your code and history lives.
 ### Clone
 
 A Git command that **copies a repo from GitHub to your local machine**, so you can work on it.  
-_Why?_ You can’t edit a GitHub repo directly from your laptop — you need a local copy.
+_Why?_ You can’t directly edit a GitHub-hosted repo from your laptop — you need to clone it to work on it locally.
 
 ### Commit
 
@@ -113,6 +113,10 @@ We’re going to:
 
 This sounds like a lot — but we’ll walk through it step by step, and you’ll be surprised how smooth it is once you get going.
 
+By the way — what makes a folder a Git repo?
+
+A folder becomes a Git repository when you run `git init` or `git clone`. This creates a hidden `.git/` folder that stores all the version history, branches, and settings. If a folder has a `.git/` directory inside, Git is tracking it.
+
 Let’s start by getting your machine ready.
 
 ### Install Git
@@ -131,7 +135,7 @@ If not:
 - **Mac**: Run `git` in Terminal; it may prompt you to install Xcode tools.
 - **Linux**: Use your package manager (`sudo apt install git`)
 
-After installing Git, configure Git with your name and email by running the following in a console window:
+After installing Git, configure Git with your name and email by running the following in a console window. This lets Git know who is making the changes — it tags your commits with this info.
 
 ```bash 
 git config --global user.name "Your Name"  
@@ -173,9 +177,74 @@ If you see a version number, you're good to go.
 4. Check **"Add a README file"**.
 5. Click **Create repository**.
 
-Now you have a repo! Let’s bring it to your machine.
-
 ### Clone the repo locally
+
+There are several ways to get a GitHub repo onto your machine:
+
+- You can **download it as a ZIP file** (just click the green **Code** button → **Download ZIP**).
+- You can **open it in GitHub Desktop** (a GUI client, good for beginners).
+- But the most powerful way — and the one we'll use — is to **clone it with Git**.
+
+To do that, you first need to choose how to connect to GitHub:
+
+#### But how should you clone — HTTPS or SSH?
+
+To clone or interact with a GitHub repository securely, you need to verify your identity with GitHub. This confirms that you have permission to access, modify, or push to that repository. There are two secure ways to do this: **HTTPS with a personal access token** or **SSH with a key pair**.
+
+When you click the green **Code** button on GitHub, you’ll see:
+
+- **HTTPS** (e.g., `https://github.com/your-username/my-repo.git`)
+- **SSH** (e.g., `git@github.com:your-username/my-repo.git`)
+
+---
+
+### Using HTTPS
+
+GitHub no longer supports password-based HTTPS. Instead, it requires a **personal access token (PAT)** as your "password".
+
+**To create a token:**
+
+1. Go to [github.com/settings/tokens](https://github.com/settings/tokens)
+2. Click **“Generate new token (classic)”**
+3. Give it a name and select the `repo` scope
+4. Click **Generate token**  
+5. **Copy the token** — you won’t be able to see it again
+
+Here's where to find that in your GitHub settings:  
+<img src="images/github_personal_token.png" alt="Personal Access Token" width="600"/>
+
+Git may ask for your token when you **clone a private repo** or **push changes**. It prompts for:
+
+- **Username** → your GitHub username  
+- **Password** → paste your personal access token (not your GitHub password)
+
+---
+
+### Using SSH instead
+
+SSH avoids entering tokens or passwords every time. Once set up, it just works silently — which makes it a better option for frequent GitHub users or anyone who wants a smoother, more secure workflow.
+
+1. Generate a key:
+
+    ```bash
+    ssh-keygen -t ed25519 -C "your_email@example.com"
+    ```
+
+2. Copy the key:
+
+    ```bash
+    cat ~/.ssh/id_ed25519.pub
+    ```
+
+3. Go to [GitHub → Settings → SSH and GPG keys](https://github.com/settings/keys), and paste it
+
+4. Test it:
+
+    ```bash
+    ssh -T git@github.com
+    ```
+
+### Now, let's clone:
 
 You are about to clone (i.e., copy) the repository you just created to your current folder, so you may want to change your console's current directory into a folder on your computer where you want to keep workshop stuff.  For example, before cloning the repo, you may want to run:
 
@@ -183,11 +252,10 @@ You are about to clone (i.e., copy) the repository you just created to your curr
 mkdir c:\ai-workshop
 cd c:\ai-workshop
 ```
-
 When you console is in the folder where you want to copy the repo, run the following to clone the repo:
 
 ```bash
-git clone https://github.com/your-username/my-first-repo.git  
+git clone git@github.com:your-username/my-first-repo.git
 cd my-first-repo
 ```
 
@@ -313,6 +381,30 @@ At this point, you have made a change to your fork on GitHub.  You didn't need a
 
 Now you have a request pending in someone else's project.  They will probably get a notification, although during the workshop, you might just want to send your friend (in our example, `fantastic-lion`) a message asking them approve or reject your PR.  Popular repositories often have hundreds of pending PRs; for example, the [ultralytics](https://github.com/ultralytics/ultralytics) repository hosts tools many folks will be using during this workshop, and as of the time we're creating this documentation, their ["open issues" list](https://github.com/ultralytics/ultralytics/pulls) has 250 open PRs.  Many of those will eventually get accepted (aka "merged"), many will get rejected, many will sit on that queue forever.
 
+## 9. Issues: asking questions, tracking bugs, and planning features
+
+GitHub **Issues** are how you report bugs, request features, or start discussions.
+
+They're not just for problems — they’re also:
+
+- TODO lists  
+- Brainstorming sessions  
+- Progress tracking tools  
+
+To open an issue:
+
+1. Go to the repo on GitHub.
+2. Click the **"Issues"** tab → **New Issue**.
+3. Write a short title + description (you can use Markdown here too!).
+4. Optionally assign labels like `bug`, `enhancement`, `question`.
+
+If you’re working on a team, it's good etiquette to:
+
+- Check if your question was already asked.
+- Keep one issue focused on one topic.
+- Reference issues in commits or PRs using `#issue_number` (e.g., `Fixes #12`).
+
+Issues are a great way to ask for help, document your thoughts, or plan your next step.
 
 ## 10. Merge conflicts (bonus)
 
