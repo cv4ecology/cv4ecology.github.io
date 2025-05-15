@@ -18,7 +18,7 @@ You don't have to use GitHub to store your code during this workshop, but you mi
 
 GitHub repos are just folders; in theory, you can organize files however you like within them. However, knowing about some common files and folders will help you more quickly understand other repos, and will help you create repos that are more easily reusable.
 
-Here are some files you’ll usually see in a GitHub repo (and why it helps):
+Here are some files you’ll usually see in a GitHub repo (and why they help):
 
 - `README.md` — The main documentation you see when you visit a GitHub repo in your browser; it typically describes what the project does, how to run it, etc.  This file is always in [markdown format](https://www.markdownguide.org/basic-syntax/).
 - `LICENSE` — Describes the license applied to the contents of this repo.  The [MIT license](https://opensource.org/license/mit) is a safe default for open-source code.
@@ -94,6 +94,10 @@ You don’t need to memorize all this now — we’ll walk through each step liv
 
 Also, although 99% of the Git you will encounter is probably on GitHub, it's useful to note that GitHub is just one place where git repos can be hosted.  All of the above concepts are core Git concepts <i>except</i> for "pull requests" and "forks"; those are GitHub concepts.
 
+### By the way — how does Git know whether a folder is a Git repository?
+
+When you run `git init` (to create a brand new repo in your current folder) or `git clone` (to make a local copy of a repo), Git creates a hidden `.git/` folder that stores all the version history, branches, and settings. If a folder has a `.git/` directory inside, Git is tracking it.
+
 
 ## 4. Trying it all out
 
@@ -112,10 +116,6 @@ We’re going to:
 - (Bonus!) Simulate and fix a merge conflict
 
 This sounds like a lot — but we’ll walk through it step by step, and you’ll be surprised how smooth it is once you get going.
-
-By the way — what makes a folder a Git repo?
-
-A folder becomes a Git repository when you run `git init` or `git clone`. This creates a hidden `.git/` folder that stores all the version history, branches, and settings. If a folder has a `.git/` directory inside, Git is tracking it.
 
 Let’s start by getting your machine ready.
 
@@ -183,24 +183,22 @@ There are several ways to get a GitHub repo onto your machine:
 
 - You can **download it as a ZIP file** (just click the green **Code** button → **Download ZIP**).
 - You can **open it in GitHub Desktop** (a GUI client, good for beginners).
-- But the most powerful way — and the one we'll use — is to **clone it with Git**.
+- But the most powerful way — and the one we'll use — is to **clone it with the `git clone` command**.
 
-To do that, you first need to choose how to connect to GitHub:
+To do that, you first need to choose how to connect to GitHub.
 
 #### But how should you clone — HTTPS or SSH?
 
-To clone or interact with a GitHub repository securely, you need to verify your identity with GitHub. This confirms that you have permission to access, modify, or push to that repository. There are two secure ways to do this: **HTTPS with a personal access token** or **SSH with a key pair**.
+If you are cloning a public repo, you don't need to provide any credentials to GitHub.  But if you want to (a) access a private GitHub repo, or (b) make changes to a public repo, you need to verify your identity with GitHub. There are two secure ways to do this: **HTTPS with a personal access token** or **SSH with a key pair**.
 
 When you click the green **Code** button on GitHub, you’ll see:
 
 - **HTTPS** (e.g., `https://github.com/your-username/my-repo.git`)
 - **SSH** (e.g., `git@github.com:your-username/my-repo.git`)
 
----
+##### Using HTTPS
 
-### Using HTTPS
-
-GitHub no longer supports password-based HTTPS. Instead, it requires a **personal access token (PAT)** as your "password".
+When you clone a repo using https, you don't use the same password you use to log in to github.com.  Instead, Git requires a **personal access token (PAT)** as your "password".
 
 **To create a token:**
 
@@ -218,13 +216,11 @@ Git may ask for your token when you **clone a private repo** or **push changes**
 - **Username** → your GitHub username  
 - **Password** → paste your personal access token (not your GitHub password)
 
----
-
-### Using SSH instead
+##### Using SSH
 
 SSH avoids entering tokens or passwords every time. Once set up, it just works silently — which makes it a better option for frequent GitHub users or anyone who wants a smoother, more secure workflow.
 
-1. Generate a key:
+1. Generate a key by running the following command in your local terminal:
 
     ```bash
     ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -236,7 +232,7 @@ SSH avoids entering tokens or passwords every time. Once set up, it just works s
     cat ~/.ssh/id_ed25519.pub
     ```
 
-3. Go to [GitHub → Settings → SSH and GPG keys](https://github.com/settings/keys), and paste it
+3. Go to [GitHub → Settings → SSH and GPG keys](https://github.com/settings/keys), and paste it.
 
 4. Test it:
 
@@ -244,7 +240,7 @@ SSH avoids entering tokens or passwords every time. Once set up, it just works s
     ssh -T git@github.com
     ```
 
-### Now, let's clone:
+### Now, let's clone
 
 You are about to clone (i.e., copy) the repository you just created to your current folder, so you may want to change your console's current directory into a folder on your computer where you want to keep workshop stuff.  For example, before cloning the repo, you may want to run:
 
@@ -252,7 +248,7 @@ You are about to clone (i.e., copy) the repository you just created to your curr
 mkdir c:\ai-workshop
 cd c:\ai-workshop
 ```
-When you console is in the folder where you want to copy the repo, run the following to clone the repo:
+When your console is in the folder where you want to copy the repo, run the following to clone the repo:
 
 ```bash
 git clone git@github.com:your-username/my-first-repo.git
