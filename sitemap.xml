@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- List canonical, indexable HTML pages only. Test-Site.ps1 checks coverage. -->
+  <url><loc>https://cv4ecology.csail.mit.edu/</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/pages/call-for-applications.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/pages/course-details.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/pages/faq.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/pages/important-dates.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2022/course-content.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2022/instructors.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2022/speakers.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2022/students.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2023/course-content.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2023/instructors.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2023/speakers.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2023/students.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2025/course-content.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2025/instructors.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2025/students.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2026/course-content.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2026/instructors.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2026/speakers.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2026/students.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2027/course-content.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2027/instructors.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2027/speakers.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/editions/2027/students.html</loc></url>
+  <url><loc>https://cv4ecology.csail.mit.edu/workshops/2025-ai-upskilling/</loc></url>
+</urlset>

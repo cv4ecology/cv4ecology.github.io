@@ -48,15 +48,15 @@ We will generally refer to "Visual Studio Code" as "VS Code".
 
 * Click on this icon on the left to bring up the extensions menu, or press ctrl-shift-x:
 
-  <img src="images/tools_vscode_extensions_thumb.jpg">
+  <img src="images/workshops/ai-upskilling-2025/vscode-extensions-thumb.jpg">
   
 * Search for "Python" in the extensions menu, and install the Python extension, which looks like this:
 
-  <img src="images/tools_python_extension.jpg">
+  <img src="images/workshops/ai-upskilling-2025/python-extension.jpg">
   
 * Search for "Jupyter" in the extensions menu, and install the Jupyter extension, which looks like this:
 
-  <img src="images/tools_jupyter_extension.jpg">
+  <img src="images/workshops/ai-upskilling-2025/jupyter-extension.jpg">
 
 
 ### Download or create a test Python file
@@ -78,17 +78,17 @@ Any time you want to run an entire Python file from VS Code, you can click "run 
 
 Once you've opened your Python file, if you put your cursor in any cell, like this:
 
-<img src="images/tools_example_cell.jpg">
+<img src="images/workshops/ai-upskilling-2025/example-cell.jpg">
 
 ...and press ctrl-enter (or right-click on the editor and click "run in interactive window &rarr; run current cell"), that cell will be executed in the Python Interactive Window, where you'll see the output, like this:
 
-<img src="images/tools_cell_output.jpg">
+<img src="images/workshops/ai-upskilling-2025/cell-output.jpg">
 
 You can also execute one or more lines, instead of a whole cell, by selecting those lines, and pressing shift-enter (or you can right-click on the editor and click "run in interactive window &rarr; run selection/line in interactive window".
 
 For RStudio and Matlab users, this experience should feel familiar, where you have your code in one place and the output in another.  Just like in the Matlab/R Studio console, you can also run code directly in the Python Interactive Window, by clicking in this area in the bottom and typing any code you want to run:
 
-<img src="images/tools_interactive_execution.jpg">
+<img src="images/workshops/ai-upskilling-2025/interactive-execution.jpg">
 
 It's generally not recommended to type lots of code directly into that area, since you have no record of that code.  But it's often useful if you just want to run a disposable bit of code, e.g. to print the value or type of a variable.
 
@@ -110,7 +110,7 @@ It's generally not recommended to type lots of code directly into that area, sin
   * Search for "workbench.panel.defaultlocation"
   * Change "bottom" to "right", like this:
   
-    <img src="images/tools_workbench_location.jpg">
+    <img src="images/workshops/ai-upskilling-2025/workbench-location.jpg">
 
 * Enable Matlab-like bookmarks (in Matlab, you can press ctrl-F2 to mark a line of code, then press F2 to move between marks)
 
@@ -118,7 +118,7 @@ It's generally not recommended to type lots of code directly into that area, sin
   
   * Search for and install the "Bookmarks" extension, which looks like this:
   
-    <img src="images/tools_bookmarks_extension.jpg">
+    <img src="images/workshops/ai-upskilling-2025/bookmarks-extension.jpg">
 	
   * After installing that extension, the default keyboard shortcuts for this extension are:
   
@@ -128,14 +128,14 @@ It's generally not recommended to type lots of code directly into that area, sin
 		
 * Hide the "minimap", which is the super-fancy scrollbar on the right that smushes all your code into a column:
   
-  <img src="images/tools_minimap.jpg">
+  <img src="images/workshops/ai-upskilling-2025/minimap.jpg">
 	
   * Click on the minimap, and un-check "minimap"
   * If you want it back, click view &rarr; appearance &rarr; minimap
 	
 * If you are used to the clean look of code cells in Matlab, you may find this decoration at the top of every cell to be distracting (to each their own, but this former Matlab user can't stand it):
   
-  <img src="images/tools_runcell.jpg">
+  <img src="images/workshops/ai-upskilling-2025/runcell.jpg">
   
   To disable that decoration:
   
@@ -143,7 +143,7 @@ It's generally not recommended to type lots of code directly into that area, sin
   * Search for "jupyter.codelens"
   * Un-check the "enable code lens" checkbox, which looks like this:
   
-    <img src="images/tools_codelens.jpg">
+    <img src="images/workshops/ai-upskilling-2025/codelens.jpg">
  
   You can still run code cells using the keyboard.
 
@@ -211,7 +211,7 @@ Again, <b>these are all optional tweaks</b> that make a slightly cleaner visual 
 
 * Hide this yellow light bulb that appears all over your code:
 
-  <img src="images/tools_lightbulb.jpg">
+  <img src="images/workshops/ai-upskilling-2025/lightbulb.jpg">
 
   ...by adding this setting:
   
@@ -219,7 +219,7 @@ Again, <b>these are all optional tweaks</b> that make a slightly cleaner visual 
   
 * Hide these vertical bars:
 
-  <img src="images/tools_vertical_bars.jpg">
+  <img src="images/workshops/ai-upskilling-2025/vertical-bars.jpg">
   
   ...by adding this setting:
   
@@ -227,7 +227,7 @@ Again, <b>these are all optional tweaks</b> that make a slightly cleaner visual 
   
 * Disable this highlighting behavior when I put my cursor in any word (but keep it when I select the word):
 
-  <img src="images/tools_word_highlight.jpg">
+  <img src="images/workshops/ai-upskilling-2025/word-highlight.jpg">
   
   ...by adding this setting:
   
@@ -251,7 +251,7 @@ All the instructions we provide later in this section will assume you are runnin
 
 You will know you are at a Miniforge prompt (as opposed to run-of-the-mill command prompt) if you see an environment name in parentheses before your current directory, like this:
 
-<img src="images/tools_conda_prompt_base.jpg">
+<img src="images/workshops/ai-upskilling-2025/conda-prompt-base.jpg">
 
 ### Install Miniforge on Linux/Mac
 
@@ -263,7 +263,7 @@ Once you've installed Miniforge, open the Miniforge command prompt.  If you are 
 
 As per above, you should see something like this:
 
-<img src="images/tools_conda_prompt_base.jpg">
+<img src="images/workshops/ai-upskilling-2025/conda-prompt-base.jpg">
 
 Usually when you work with Python code, you create a "virtual environment" for each project.  A Python virtual environment is basically a set of installed libraries, and keeping your projects in different environments make it much easier to handle situations where, for example, one project requires version 1.24.6 of a library, but another project requires version 2.45.99 of the same library.
 
@@ -279,7 +279,7 @@ Then whenever you want to use that environment, run:
 
 After that, you should see a prompt that looks like this:
 
-<img src="images/tools_conda_prompt_workshop.jpg">
+<img src="images/workshops/ai-upskilling-2025/conda-prompt-workshop.jpg">
 
 You will need to run the "conda activate" command each time you want to use that environment.
 
@@ -291,17 +291,17 @@ In this workshop, we will use this command prompt to manage and install Python p
 
 VS Code should be aware of Python environments that you create in the Miniforge command prompt, you just need to tell VS Code which environment you want it to use.  In the Python Interactive Window that we referred to earlier, where your output shows up in VS Code, there is an icon in the upper-right that tells you which environment that window is using right now:
 
-<img src="images/tools_environment_icon.jpg">
+<img src="images/workshops/ai-upskilling-2025/environment-icon.jpg">
 
 Click that icon, then click "select another kernel", then click "Python environments", and the Python environment you just created should appear there:
 
-<img src="images/tools_select_environment.jpg">
+<img src="images/workshops/ai-upskilling-2025/select-environment.jpg">
 
 Select that environment.  You may be prompted to install some additional VS Code stuff, click "OK".
 
 We can verify that our environment is working OK by checking that our VS Code window can see the "pandas" library that we installed earlier.  In this area at the bottom of the Python Interactive Window in VS Code:
 
-<img src="images/tools_interactive_execution.jpg">
+<img src="images/workshops/ai-upskilling-2025/interactive-execution.jpg">
 
 ...run this:
 
@@ -309,7 +309,7 @@ We can verify that our environment is working OK by checking that our VS Code wi
 
 You should see something like this:
 
-<img src="images/tools_pandas_version.jpg">
+<img src="images/workshops/ai-upskilling-2025/pandas-version.jpg">
 
 
 ## Remote development
@@ -339,19 +339,19 @@ password: ai-workshop-password
 
 To use this login information, Start PortX, then click this little button on the left to bring up the connection list:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tools_portx_connection_list.jpg">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/workshops/ai-upskilling-2025/portx-connection-list.jpg">
 
 Right-click, and click new &rarr; terminal session.  Give it a name, like "AI Workshop VM", and enter the IP address we gave you in the "hostname" box, like this:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tools_portx_new_connection_general.jpg">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/workshops/ai-upskilling-2025/portx-new-connection-general.jpg">
 
 Click the icon on the left that looks like a person, and enter the username and password we gave you:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tools_portx_auth.jpg">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/workshops/ai-upskilling-2025/portx-auth.jpg">
 
 Click "OK", then double-click on the connection you just created.  This will give you a Linux terminal where you can run commands on the remote VM:
 
-<img src="images/tools_cv4e_terminal.jpg">
+<img src="images/workshops/ai-upskilling-2025/cv4e-terminal.jpg">
 
 You can also set up a graphical connection over this SSH connection, so you can run graphical programs (especially VS Code) on the remote VM.  We are not going to recommend this as a common approach, but just to have it all documented, here is how you can configure a remote graphical connection:
 
@@ -360,11 +360,11 @@ You can also set up a graphical connection over this SSH connection, so you can 
   * Click "properties"
   * Click the icon on the left that looks like the universal symbol for "Internet"
   * Click "Add"
-  * Create a rule that looks like this:<br><br><img src="images/tools_portx_tunneling.jpg">
+  * Create a rule that looks like this:<br><br><img src="images/workshops/ai-upskilling-2025/portx-tunneling.jpg">
   
 * Install a client for the "VNC" graphical desktop protocol.  We recommend the free-and-very-simple "vncviewer64" client that comes with TigerVNC.  If you are a Windows user, go <a href="https://sourceforge.net/projects/tigervnc/files/stable/1.15.0/">here</a> and download "vncviewer64-1.15.0.exe".
 
-* Run the VNCViewer program you just downloaded, and you'll get a window that looks like this:<br/><br/><img src="images/tools_vncviewer.jpg"><br/><br/>Enter "localhost:5906", like in the screenshot, click "connect", and type your password.  You should get a delightful graphical view of your VM, like this:<br/><br/><img src="images/tools_vnc_screenshot.jpg">
+* Run the VNCViewer program you just downloaded, and you'll get a window that looks like this:<br/><br/><img src="images/workshops/ai-upskilling-2025/vncviewer.jpg"><br/><br/>Enter "localhost:5906", like in the screenshot, click "connect", and type your password.  You should get a delightful graphical view of your VM, like this:<br/><br/><img src="images/workshops/ai-upskilling-2025/vnc-screenshot.jpg">
 
 ### Installing stuff on your VM
 
@@ -379,7 +379,7 @@ bash Miniforge3-$(uname)-$(uname -m).sh -b
 
 As was the case when you installed Miniforge on your local computer, you know everything is working if you see "base" in your command prompt, like this:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tools_mamba_bash.jpg">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/workshops/ai-upskilling-2025/mamba-bash.jpg">
 
 For those who are curious, those four lines do the following things, respectively:
 
@@ -392,15 +392,15 @@ For those who are curious, those four lines do the following things, respectivel
 
 Often you want to use your local VS Code installation, but have the Python code actually be running on the remote VM.  VS Code is very good at this.  To set this up...
 
-* Press ctrl-shift-x to bring up the extensions menu in VS Code, and install the "Remote - SSH" extension, which should look like this:<br/><br/><img src="images/tools_remote_ssh_extension.jpg">
+* Press ctrl-shift-x to bring up the extensions menu in VS Code, and install the "Remote - SSH" extension, which should look like this:<br/><br/><img src="images/workshops/ai-upskilling-2025/remote-ssh-extension.jpg">
 * Click view &rarr; command palette (or press "ctrl-shift-p")
-* Type "remote-ssh".  A bunch of different things you can do with this extension will pop up; click the one that says "remote-ssh: connect to host".  You should see this:<br/><br/><img src="images/tools_remote_ssh_new.jpg">
+* Type "remote-ssh".  A bunch of different things you can do with this extension will pop up; click the one that says "remote-ssh: connect to host".  You should see this:<br/><br/><img src="images/workshops/ai-upskilling-2025/remote-ssh-new.jpg">
 * Click "add new ssh host"
 * In the box that comes up, type "ssh [user]@[ip-address]".  Using the example from above, you would type:<br/>ai-workshop-participant@1.2.3.4
-* Another box will pop up, asking you which config file you want to store this login in.  It's just going to store the user name and IP address, so you don't have to type it every time you log in.  That box will look something like this, choose the default (the first one in the list):<br/><br/><img src="images/tools_ssh_config.jpg">
+* Another box will pop up, asking you which config file you want to store this login in.  It's just going to store the user name and IP address, so you don't have to type it every time you log in.  That box will look something like this, choose the default (the first one in the list):<br/><br/><img src="images/workshops/ai-upskilling-2025/ssh-config.jpg">
 * A little message will pop up saying that the new connection was created.
 * Launch the "remote-ssh: connect to host" command again, this time your connection will be in the list, before "add new ssh host".  Click on the new connection.
-* A new window will pop up, in which you will be prompted for the operating system type of the remote computer, click "Linux":<br/><img src="images/tools_vscode_remote_os.jpg">
+* A new window will pop up, in which you will be prompted for the operating system type of the remote computer, click "Linux":<br/><img src="images/workshops/ai-upskilling-2025/vscode-remote-os.jpg">
 * Click "continue".  You will be prompted for your password, type it.
 * You'll see a brand new VS Code Window pop up.  This VS Code window is connected to the remote VM.  For example, if you create a new file and click "save", you'll see that the default folder is your home folder on the remote Linux VM, not the default "save" folder on your local PC
 * Install the "Python" and "Jupyter" extensions in this Window, just like you did on your own computer.
