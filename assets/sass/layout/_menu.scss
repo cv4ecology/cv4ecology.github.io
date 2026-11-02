@@ -95,4 +95,24 @@
 				}
 			}
 		}
+
+		ul a {
+			color: _palette(fg-bold);
+		}
+
+		a[aria-current="page"] {
+			font-weight: 700;
+			text-decoration: underline;
+			text-underline-offset: 0.2em;
+		}
+
+		a:focus-visible, .opener:focus-visible {
+			outline: 2px solid _palette(fg-bold);
+			outline-offset: 2px;
+		}
+
+		ul span:not(.opener) {
+			color: _palette(fg-bold);
+			cursor: default;
+		}
 	}

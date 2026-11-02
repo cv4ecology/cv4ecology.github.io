@@ -4,6 +4,24 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+.skip-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateY(-100%);
+	z-index: 10000;
+	padding: 0.75em 1em;
+	background: _palette(bg);
+	color: _palette(fg-bold);
+
+	&:focus {
+		transform: translateY(0);
+		color: _palette(fg-bold) !important;
+		outline: 2px solid _palette(fg-bold);
+		outline-offset: -2px;
+	}
+}
+
 /* Basic */
 
 	// MSIE: Required for IEMobile.

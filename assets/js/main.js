@@ -249,12 +249,20 @@
 						event.preventDefault();
 
 					// Toggle.
-						$menu_openers.not($this).removeClass('active');
+						$menu_openers.not($this).removeClass('active').attr('aria-expanded', 'false');
 						$this.toggleClass('active');
+						$this.attr('aria-expanded', $this.hasClass('active'));
 
 					// Trigger resize (sidebar lock).
 						$window.triggerHandler('resize.sidebar-lock');
 
+				});
+
+				$this.on('keydown', function(event) {
+					if (event.which === 13 || event.which === 32) {
+						event.preventDefault();
+						$this.trigger('click');
+					}
 				});
 
 			});

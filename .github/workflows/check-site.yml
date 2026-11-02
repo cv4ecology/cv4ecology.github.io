@@ -1,0 +1,20 @@
+name: Check static site
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-site:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate links, headings, previews, and sitemap
+        shell: powershell
+        run: .\scripts\Test-Site.ps1
